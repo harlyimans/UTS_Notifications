@@ -5,7 +5,22 @@ import 'firebase_options.dart';
 import 'screens/login_screen.dart';
 import 'screens/dashboard_screen.dart';
  
-void main() {
+// void main() {
+//   runApp(const MyApp());
+// }
+/* pakai ini akan eror The following _TypeError was thrown building MyApp(dirty):
+TypeError: Instance of 'FirebaseException': type 'FirebaseException' is not a subtype of type
+'JavaScriptObject'
+
+The relevant error-causing widget was:
+  MyApp MyApp:file:///E:/workspace/flutter_firebase_2/lib/main.dart:9:16
+*/
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
  
